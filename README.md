@@ -5,7 +5,7 @@ A complete WordPress event management plugin with RSVP, REST API, notifications,
 ## Features
 
 - **Custom Post Type** – `tc_event` with `event_type` taxonomy
-- **Meta Fields** – Start/end date, location, capacity
+- **Meta Fields** – Start/end date, location, capacity, card hover color
 - **RSVP System** – Custom database table with capacity checks and AJAX toggle
 - **REST API** – Full CRUD endpoints at `/wp-json/tc-events/v1/`
 - **Email Notifications** – Admin notified on publish; attendees notified on updates
@@ -23,9 +23,10 @@ A complete WordPress event management plugin with RSVP, REST API, notifications,
 
 ## Installation
 
-1. Copy the `tc-events` directory to `wp-content/plugins/`
+1. Upload the plugin via **WP Admin → Plugins → Add Plugin → Upload**, or copy the `tc-events` directory to `wp-content/plugins/`
 2. Activate via WP Admin → Plugins
-3. Navigate to Events in the admin menu
+3. Navigate to **Events** in the admin menu
+4. Event archive is available at `/events/`
 
 ## Shortcode
 
