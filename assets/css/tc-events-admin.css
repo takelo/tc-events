@@ -1,0 +1,80 @@
+/**
+ * TC Events – Admin Styles
+ */
+
+/* Meta box enhancements */
+#tc_event_details input[type="datetime-local"],
+#tc_event_details input[type="text"],
+#tc_event_details input[type="number"] {
+	width: 100%;
+	padding: 6px 8px;
+}
+
+#tc_event_details label {
+	display: block;
+	margin-bottom: 4px;
+}
+
+#tc_event_details .description {
+	font-style: italic;
+	color: #666;
+	font-size: 12px;
+}
+
+/* Admin column styling */
+.column-event_date {
+	width: 160px;
+}
+
+.column-event_location {
+	width: 150px;
+}
+
+.column-rsvp_count {
+	width: 80px;
+	text-align: center;
+}
+
+/* Date validation feedback */
+.tc-date-error {
+	color: #d63638;
+	font-size: 12px;
+	margin-top: 4px;
+	display: none;
+}
+
+.tc-date-error.visible {
+	display: block;
+}
+
+/* Attendees meta box */
+.tc-attendees-summary {
+	margin-bottom: 12px;
+	font-size: 14px;
+}
+
+.tc-attendees-table {
+	margin-top: 8px;
+}
+
+.tc-attendees-table th {
+	font-weight: 600;
+}
+
+.tc-attendee-status {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.tc-attendee-status--confirmed {
+	background: #d4edda;
+	color: #155724;
+}
+
+.tc-attendee-status--cancelled {
+	background: #f8d7da;
+	color: #721c24;
+}

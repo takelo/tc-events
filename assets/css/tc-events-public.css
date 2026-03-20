@@ -1,0 +1,341 @@
+/**
+ * TC Events – Public Styles
+ */
+
+/* Grid Layout */
+.tc-events-grid {
+	display: grid;
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+
+.tc-events-cols-1 { grid-template-columns: 1fr; }
+.tc-events-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.tc-events-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.tc-events-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 768px) {
+	.tc-events-cols-2,
+	.tc-events-cols-3,
+	.tc-events-cols-4 {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+	.tc-events-cols-3,
+	.tc-events-cols-4 {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Event Card – Background translation effect */
+.tc-event-card {
+	--tc-card-color: #ff56ac;
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	transition: box-shadow 0.3s ease;
+}
+
+.tc-event-card::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: calc(-100% + 5px);
+	width: 100%;
+	height: 100%;
+	background-color: var(--tc-card-color);
+	z-index: 1;
+	transition: 0.5s;
+}
+
+.tc-event-card:hover::before {
+	bottom: 0;
+}
+
+.tc-event-card:hover {
+	box-shadow: 0 15px 40px color-mix(in srgb, var(--tc-card-color) 30%, transparent);
+}
+
+.tc-event-card-thumbnail {
+	position: relative;
+	z-index: 2;
+}
+
+.tc-event-card-thumbnail img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+}
+
+.tc-event-card-content {
+	position: relative;
+	padding: 1.5rem;
+	z-index: 2;
+	transition: color 0.5s;
+	color: #777;
+}
+
+.tc-event-card:hover .tc-event-card-content {
+	color: #fff;
+}
+
+.tc-event-card-title {
+	margin: 0 0 0.5rem;
+	font-size: 1.2rem;
+	line-height: 1.3;
+}
+
+.tc-event-card-title a {
+	text-decoration: none;
+	color: inherit;
+	transition: color 0.5s;
+}
+
+.tc-event-card:hover .tc-event-card-title a {
+	color: #fff;
+}
+
+.tc-event-card-date,
+.tc-event-card-location {
+	margin: 0.25rem 0;
+	font-size: 0.9rem;
+	transition: color 0.5s;
+}
+
+.tc-event-card-date::before {
+	content: "\1F4C5 ";
+}
+
+.tc-event-card-location::before {
+	content: "\1F4CD ";
+}
+
+.tc-event-card-excerpt {
+	margin: 0.75rem 0;
+	font-size: 0.95rem;
+	transition: color 0.5s;
+}
+
+.tc-event-card-link {
+	display: inline-block;
+	margin-top: 0.75rem;
+	padding: 6px 14px;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #777;
+	text-decoration: none;
+	background-color: #fff;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+	border-radius: 4px;
+	transition: color 0.5s, box-shadow 0.3s;
+	position: relative;
+	z-index: 2;
+}
+
+.tc-event-card:hover .tc-event-card-link {
+	color: var(--tc-card-color);
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Single Event */
+.tc-events-single {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.tc-event-thumbnail {
+	margin-bottom: 1.5rem;
+}
+
+.tc-event-thumbnail img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.tc-event-header {
+	margin-bottom: 1.5rem;
+}
+
+.tc-event-title {
+	margin: 0 0 0.5rem;
+	font-size: 2rem;
+}
+
+.tc-event-types {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.tc-event-type-badge {
+	display: inline-block;
+	padding: 0.25rem 0.75rem;
+	background: #f0f0f0;
+	border-radius: 20px;
+	font-size: 0.85rem;
+	color: #555;
+}
+
+.tc-event-meta {
+	background: #f9f9f9;
+	padding: 1.25rem;
+	border-radius: 8px;
+	margin-bottom: 1.5rem;
+}
+
+.tc-event-meta-item {
+	margin-bottom: 0.5rem;
+}
+
+.tc-event-meta-item:last-child {
+	margin-bottom: 0;
+}
+
+.tc-event-content {
+	margin-bottom: 2rem;
+	line-height: 1.7;
+}
+
+/* RSVP Form */
+.tc-event-rsvp-section {
+	margin: 2rem 0;
+	padding: 1.5rem;
+	background: #f9f9f9;
+	border-radius: 8px;
+}
+
+.tc-event-rsvp-section h3 {
+	margin: 0 0 1rem;
+	text-align: center;
+}
+
+.tc-rsvp-form {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.tc-rsvp-field {
+	margin-bottom: 1rem;
+}
+
+.tc-rsvp-field label {
+	display: block;
+	margin-bottom: 0.25rem;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.tc-rsvp-field label .required {
+	color: #d63638;
+}
+
+.tc-rsvp-field input {
+	width: 100%;
+	padding: 0.6rem 0.75rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	box-sizing: border-box;
+}
+
+.tc-rsvp-field input:focus {
+	border-color: #0073aa;
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.2);
+}
+
+.tc-rsvp-button {
+	display: block;
+	width: 100%;
+	padding: 0.75rem 2rem;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #fff;
+	background: #0073aa;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: background 0.2s ease;
+}
+
+.tc-rsvp-button:hover {
+	background: #005a87;
+}
+
+.tc-rsvp-button:disabled {
+	background: #ccc;
+	cursor: not-allowed;
+}
+
+.tc-rsvp-button.tc-rsvp-loading {
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+.tc-rsvp-message {
+	max-width: 400px;
+	margin: 1rem auto 0;
+	padding: 0.75rem 1rem;
+	border-radius: 6px;
+	text-align: center;
+	font-weight: 500;
+}
+
+.tc-rsvp-message-success {
+	background: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+}
+
+.tc-rsvp-message-error {
+	background: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
+}
+
+.tc-event-full-notice,
+.tc-event-past-notice {
+	text-align: center;
+	font-size: 1.1rem;
+	color: #666;
+	font-weight: 600;
+}
+
+/* Archive */
+.tc-events-archive {
+	max-width: 1200px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.tc-events-archive-header {
+	text-align: center;
+	margin-bottom: 2.5rem;
+}
+
+.tc-events-archive-header h1 {
+	margin: 0;
+	font-size: 2.5rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+}
+
+.tc-events-pagination {
+	margin: 2rem 0;
+	text-align: center;
+}
+
+.tc-events-no-events {
+	text-align: center;
+	padding: 3rem 1rem;
+	color: #666;
+	font-size: 1.1rem;
+}
